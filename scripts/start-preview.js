@@ -200,10 +200,23 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use. Please check other instances.`);
+  } else {
+    console.error('Server error:', err);
+  }
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Process uncaughtException:', err);
+});
+
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`=======================================================`);
   console.log(` Aroha AI Farm ERP Platform Live & Running!`);
   console.log(` Web Application UI: http://localhost:${PORT}`);
+  console.log(` Network URL:        http://127.0.0.1:${PORT}`);
   console.log(` REST API Base URL:  http://localhost:${PORT}/api/v1`);
   console.log(` User Session:       BEGARI RAJU (Farm Administrator)`);
   console.log(` Mode:               Full-Stack Integrated Server`);
