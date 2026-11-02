@@ -1,0 +1,13 @@
+{
+  "name": "aroha-ai-farm-erp",
+  "version": "1.0.0",
+  "description": "Aroha AI Farm ERP Intelligence Platform",
+  "scripts": {
+    "start": "node scripts/start-preview.js",
+    "start:backend": "cd backend && npm run start",
+    "test": "cd backend && npm test"
+  },
+  "author": "BEGARI RAJU",
+  "license": "ISC"
+}
+
