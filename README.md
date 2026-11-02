@@ -106,3 +106,4 @@ arogafarm/
 
 * **Begari Raju** (Technical Lead / Farm Administrator)
 * Project: Aroha AI Farm ERP Intelligence Platform
+
